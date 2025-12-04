@@ -1,0 +1,165 @@
+# Harbor Helm Values - SECURE IRSA CONFIGURATION
+# This configuration uses IRSA for credential-free S3 access
+#
+# Usage:
+#   1. Replace ${AWS_REGION}, ${AWS_ACCOUNT_ID}, ${S3_BUCKET_NAME} with your values
+#   2. Update externalURL after LoadBalancer is created
+#   3. Change harborAdminPassword to a strong password
+#
+# Deploy with:
+#   helm install harbor harbor/harbor \
+#     --namespace harbor \
+#     --values harbor-values-irsa.yaml
+
+# Expose Harbor via LoadBalancer
+expose:
+  type: loadBalancer
+  tls:
+    enabled: true
+    certSource: auto
+  loadBalancer:
+    name: harbor
+    ports:
+      httpPort: 80
+      httpsPort: 443
+
+# External URL (update with your LoadBalancer DNS after deployment)
+externalURL: https://harbor.example.com
+
+# Persistence configuration
+persistence:
+  enabled: true
+  resourcePolicy: "keep"
+  persistentVolumeClaim:
+    registry:
+      storageClass: "gp3"
+      size: 100Gi
+    chartmuseum:
+      storageClass: "gp3"
+      size: 10Gi
+    jobservice:
+      storageClass: "gp3"
+      size: 10Gi
+    database:
+      storageClass: "gp3"
+      size: 10Gi
+    redis:
+      storageClass: "gp3"
+      size: 10Gi
+    trivy:
+      storageClass: "gp3"
+      size: 10Gi
+
+# ============================================
+# S3 Storage Backend - IRSA CONFIGURATION
+# ============================================
+imageChartStorage:
+  disableredirect: false
+  type: s3
+  s3:
+    # S3 bucket configuration
+    region: us-east-1  # REPLACE WITH YOUR REGION
+    bucket: harbor-registry-storage-123456789012-us-east-1  # REPLACE WITH YOUR BUCKET
+    
+    # ✅ NO STATIC CREDENTIALS!
+    # IRSA provides credentials automatically via service account
+    # DO NOT specify accesskey or secretkey
+    
+    regionendpoint: ""
+    
+    # ✅ ENCRYPTION ENABLED
+    encrypt: true
+    
+    # ✅ SECURE TRANSPORT
+    secure: true
+    
+    # Use AWS Signature Version 4
+    v4auth: true
+    
+    # Chunk size for multipart uploads (5MB)
+    chunksize: "5242880"
+    
+    # Root directory in S3 bucket
+    rootdirectory: /harbor
+    
+    # S3 storage class
+    storageclass: STANDARD
+    
+    # Multipart upload configuration
+    multipartcopychunksize: "33554432"
+    multipartcopymaxconcurrency: 100
+    multipartcopythresholdsize: "33554432"
+
+# Harbor admin password (CHANGE THIS!)
+harborAdminPassword: "ChangeMe123!"
+
+# ============================================
+# SERVICE ACCOUNT CONFIGURATION - CRITICAL!
+# ============================================
+serviceAccount:
+  # Do not create - we create it manually with IAM annotation
+  create: false
+  # Use the service account with IAM role annotation
+  name: harbor-registry
+
+# Configure each component to use the service account
+core:
+  serviceAccountName: harbor-registry
+
+registry:
+  serviceAccountName: harbor-registry
+
+jobservice:
+  serviceAccountName: harbor-registry
+
+# Disable Notary
+notary:
+  enabled: false
+
+# Enable Trivy vulnerability scanning
+trivy:
+  enabled: true
+
+# Use internal PostgreSQL
+database:
+  type: internal
+  internal:
+    serviceAccountName: harbor-registry
+
+# Use internal Redis
+redis:
+  type: internal
+  internal:
+    serviceAccountName: harbor-registry
+
+# Disable metrics
+metrics:
+  enabled: false
+
+# Resource limits
+core:
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 512Mi
+      cpu: 500m
+
+registry:
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 512Mi
+      cpu: 500m
+
+jobservice:
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 512Mi
+      cpu: 500m

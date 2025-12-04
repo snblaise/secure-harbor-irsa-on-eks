@@ -1,0 +1,39 @@
+# Example Terraform Variables File
+# Copy this file to terraform.tfvars and customize for your environment
+
+# AWS Configuration
+aws_region = "us-east-1"
+
+# EKS Cluster Configuration
+cluster_name       = "harbor-irsa-workshop"
+kubernetes_version = "1.28"
+vpc_cidr           = "10.0.0.0/16"
+availability_zones = ["us-east-1a", "us-east-1b"]
+
+# Node Group Configuration
+node_instance_types = ["t3.medium"]
+node_capacity_type  = "ON_DEMAND"  # Use "SPOT" for cost savings
+node_desired_size   = 2
+node_min_size       = 1
+node_max_size       = 4
+
+# S3 Configuration
+s3_bucket_prefix = "harbor-registry-storage"
+
+# Harbor Configuration
+harbor_namespace            = "harbor"
+harbor_service_account_name = "harbor-registry"
+harbor_admin_password       = "ChangeMe123!"  # Change this!
+
+# Harbor Resource Configuration (adjust based on your needs)
+harbor_core_replicas     = 1
+harbor_registry_replicas = 1
+harbor_enable_trivy      = true
+
+# Common Tags
+common_tags = {
+  Project     = "harbor-irsa-workshop"
+  Environment = "workshop"
+  ManagedBy   = "terraform"
+  Owner       = "your-name"
+}
