@@ -531,7 +531,7 @@ Ready to secure your Harbor deployment? Here's what to do next:
    - Validation tests
    - Troubleshooting guide
 
-   👉 **[Get the workshop on GitHub](https://github.com/yourusername/secure-harbor-irsa-on-eks)**
+   👉 **[Get the workshop on GitHub](https://github.com/snblaise/secure-harbor-irsa-on-eks)**
 
 3. **Start small**: Implement IRSA in a dev environment first. Validate it works. Then roll it out to production.
 
@@ -566,7 +566,7 @@ This article is based on a comprehensive hands-on workshop I created for cloud s
 - Security hardening best practices
 - Troubleshooting guide
 
-**Workshop Repository**: [secure-harbor-irsa-on-eks](https://github.com/yourusername/secure-harbor-irsa-on-eks)
+**Workshop Repository**: [secure-harbor-irsa-on-eks](https://github.com/snblaise/secure-harbor-irsa-on-eks)
 
 **Estimated Time**: 3-4 hours  
 **Level**: Intermediate to Advanced  
@@ -584,9 +584,9 @@ This article is based on a comprehensive hands-on workshop I created for cloud s
 
 Found this helpful? Let's connect:
 
-- **GitHub**: [Your GitHub Profile]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **Twitter**: [Your Twitter Handle]
+- **Medium**: [@shublaisengwa](https://medium.com/@shublaisengwa)
+- **GitHub**: [snblaise](https://github.com/snblaise)
+- **LinkedIn**: Connect with me on LinkedIn
 
 Have questions about implementing IRSA? Drop a comment below or reach out directly. I'm always happy to help teams improve their cloud security posture.
 

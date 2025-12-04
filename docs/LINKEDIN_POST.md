@@ -41,9 +41,9 @@ This isn't just theory—it's a complete, production-ready implementation you ca
 **Perfect for:**
 Cloud Security Engineers | DevSecOps Practitioners | Platform Engineers | SREs | Anyone running containers on AWS
 
-🔗 **Get the workshop:** [GitHub Repository Link]
+🔗 **Get the workshop:** https://github.com/snblaise/secure-harbor-irsa-on-eks
 
-💡 **Read the deep dive:** [Medium Article Link]
+💡 **Read the deep dive:** https://medium.com/@shublaisengwa
 
 ---
 
@@ -81,8 +81,8 @@ Stop storing AWS credentials in Kubernetes secrets. Learn how to use IAM Roles f
 
 Perfect for cloud security engineers, DevSecOps practitioners, and platform teams running containers on AWS.
 
-🔗 Workshop: [GitHub Link]
-📖 Article: [Medium Link]
+🔗 Workshop: https://github.com/snblaise/secure-harbor-irsa-on-eks
+📖 Article: https://medium.com/@shublaisengwa
 
 #AWS #Kubernetes #CloudSecurity #DevSecOps #EKS #IRSA
 

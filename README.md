@@ -5,7 +5,7 @@
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-1.28+-blue.svg)](https://kubernetes.io/)
 [![Terraform](https://img.shields.io/badge/Terraform-1.5+-purple.svg)](https://www.terraform.io/)
 [![Harbor](https://img.shields.io/badge/Harbor-2.x-blue.svg)](https://goharbor.io/)
-[![Workshop](https://img.shields.io/badge/Type-Workshop-green.svg)](https://github.com/yourusername/secure-harbor-irsa-on-eks)
+[![Workshop](https://img.shields.io/badge/Type-Workshop-green.svg)](https://github.com/snblaise/secure-harbor-irsa-on-eks)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 A comprehensive, hands-on workshop demonstrating the security, scalability, and maintainability advantages of **IAM Roles for Service Accounts (IRSA)** over long-lived IAM user tokens when deploying Harbor container registry on Amazon EKS with S3 backend storage encrypted using AWS KMS.
@@ -319,7 +319,7 @@ secure-harbor-irsa-on-eks/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/secure-harbor-irsa-on-eks.git
+git clone https://github.com/snblaise/secure-harbor-irsa-on-eks.git
 cd secure-harbor-irsa-on-eks
 ```
 
@@ -534,7 +534,7 @@ Contributions are welcome! This workshop is designed to help the community learn
 ### How to Contribute
 
 1. **Fork the repository** - Click the "Fork" button at the top right
-2. **Clone your fork** - `git clone https://github.com/YOUR_USERNAME/secure-harbor-irsa-on-eks.git`
+2. **Clone your fork** - `git clone https://github.com/snblaise/secure-harbor-irsa-on-eks.git`
 3. **Create a feature branch** - `git checkout -b feature/amazing-feature`
 4. **Make your changes** - Add documentation, fix bugs, improve examples
 5. **Test your changes** - Ensure all validation tests still pass
@@ -561,7 +561,7 @@ Contributions are welcome! This workshop is designed to help the community learn
 
 ### Reporting Issues
 
-Found a bug or have a suggestion? Please [open an issue](https://github.com/yourusername/secure-harbor-irsa-on-eks/issues) with:
+Found a bug or have a suggestion? Please [open an issue](https://github.com/snblaise/secure-harbor-irsa-on-eks/issues) with:
 
 - Clear description of the problem or suggestion
 - Steps to reproduce (for bugs)
@@ -615,10 +615,10 @@ This workshop is actively maintained and regularly updated with:
 
 For questions, feedback, or support:
 
-- **GitHub Issues**: [Create an issue](https://github.com/yourusername/secure-harbor-irsa-on-eks/issues) - Best for bug reports and feature requests
-- **GitHub Discussions**: [Start a discussion](https://github.com/yourusername/secure-harbor-irsa-on-eks/discussions) - Best for questions and community help
-- **LinkedIn**: Connect for professional networking and workshop feedback
-- **Medium**: Read the [detailed article](docs/MEDIUM_ARTICLE.md) about this workshop
+- **GitHub Issues**: [Create an issue](https://github.com/snblaise/secure-harbor-irsa-on-eks/issues) - Best for bug reports and feature requests
+- **GitHub Discussions**: [Start a discussion](https://github.com/snblaise/secure-harbor-irsa-on-eks/discussions) - Best for questions and community help
+- **LinkedIn**: Connect with me on LinkedIn for professional networking and workshop feedback
+- **Medium**: [@shublaisengwa](https://medium.com/@shublaisengwa) - Read the detailed article about this workshop
 
 ### Workshop Support
 
